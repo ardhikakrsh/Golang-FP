@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+  api:
+    build:
+      context: .
+      dockerfile: Multi-stage
+    restart: always
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+
+    

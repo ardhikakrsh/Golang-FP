@@ -1,0 +1,15 @@
+{
+  "configurations": [
+    {
+      "name": "Docker Node.js Launch",
+      "type": "docker",
+      "request": "launch",
+      "preLaunchTask": "docker-run: debug",
+      "platform": "node",
+      "node": {
+        "package": "${workspaceFolder}/client/node_modules/next/dist/compiled/is-docker/package.json",
+        "localRoot": "${workspaceFolder}/client/node_modules/next/dist/compiled/is-docker"
+      }
+    }
+  ]
+}
